@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_campus"
+        android:icon="@drawable/ic_baseline_location_city_24"
+        android:title="Campus"/>
+    <item
+        android:id="@+id/nav_restaurant"
+        android:icon="@drawable/ic_baseline_local_dining_24"
+        android:title="Restaurant"/>
+</menu>
