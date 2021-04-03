@@ -3,21 +3,24 @@
     package="com.app.knowyourism">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
-        android:label="KYISM"
-        android:roundIcon="@drawable/logo"
+        android:icon="@drawable/logo_without_bg"
+        android:label="kyISM"
+        android:roundIcon="@drawable/logo_without_bg"
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowYourISM">
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyArXZakzEmzahiBEU8Q6_ptlz881jEPT5A"/>
-
+        <activity android:name=".Activity.ForgetPassActivity"></activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.OtherStuffActivity" />
         <activity android:name=".Activity.ConfirmActivity" />
         <activity android:name=".Activity.UpdateProfileActivity" />
         <activity android:name=".Activity.LocationActivity" />
         <activity android:name=".Activity.ProfileActivity" />
         <activity android:name=".Activity.ActivitySpy" />
-        <activity android:name=".Activity.SearchActivity"/>
+        <activity android:name=".Activity.SearchActivity" />
+        <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,10 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyArXZakzEmzahiBEU8Q6_ptlz881jEPT5A" />
     </application>
 
 </manifest>

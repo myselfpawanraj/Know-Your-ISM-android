@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:id="@+id/dashboard"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:title="@string/dashboard"/>
+        <item
+            android:id="@+id/student_spy"
+            android:icon="@drawable/ic_baseline_person_search_24"
+            android:title="@string/student_spy"/>
+        <item
+            android:id="@+id/places"
+            android:icon="@drawable/ic_baseline_location_city_24"
+            android:title="@string/places"/>
+        <item
+            android:id="@+id/study_materials"
+            android:icon="@drawable/ic_baseline_library_books_24"
+            android:title="@string/study_materials"/>
+        <item
+            android:id="@+id/lost_n_found"
+            android:icon="@drawable/lost_n_found"
+            android:title="@string/lost_n_found"/>
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/my_profile"
+            android:icon="@drawable/profile"
+            android:title="@string/my_profile"/>
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/ic_baseline_contacts_24"
+            android:title="@string/contact_us"/>
+    </group>
+</menu>

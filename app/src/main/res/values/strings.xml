@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Know Your ISM</string>
+    <string name="app_name_short">KYI</string>
+
+
+    <!--    For menu-->
+    <string name="dashboard">Dashboard</string>
+    <string name="student_spy">Student Spy</string>
+    <string name="places">Campus &amp; Restaurants</string>
+    <string name="study_materials">Study Material</string>
+    <string name="lost_n_found">Lost And Found</string>
+    <string name="my_profile">My Profile</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+
 </resources>

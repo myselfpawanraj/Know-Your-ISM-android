@@ -2,7 +2,6 @@ package com.app.knowyourism.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.app.knowyourism.Activity.MainActivity;
 import com.app.knowyourism.Activity.ProfileActivity;
-import com.app.knowyourism.Activity.SearchActivity;
 import com.app.knowyourism.Model.Student;
 import com.app.knowyourism.R;
 import com.squareup.picasso.Picasso;
@@ -69,7 +65,7 @@ public class StudentResultAdapter extends RecyclerView.Adapter<StudentResultAdap
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, ProfileActivity.class);
-                i.putExtra( "Admnno",student.getAdmissionNo() );
+                i.putExtra("student",student);
                 context.startActivity(i);
             }
         } );
@@ -83,7 +79,7 @@ public class StudentResultAdapter extends RecyclerView.Adapter<StudentResultAdap
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textviewname=itemView.findViewById( R.id.textviewname ),
                 textviewbranch=itemView.findViewById( R.id.textviewbranch ),
-                textviewplace=itemView.findViewById( R.id.textviewplace );
+                textviewplace=itemView.findViewById( R.id.textviewBranch);
         ImageView imageView=itemView.findViewById( R.id.imageavatar );
         ConstraintLayout cardview=itemView.findViewById( R.id.cardview );
         public ViewHolder(@NonNull View itemView) {

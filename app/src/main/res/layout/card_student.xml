@@ -87,14 +87,14 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:scaleType="fitXY"
-                app:layout_constraintBottom_toBottomOf="@+id/textviewplace"
+                app:layout_constraintBottom_toBottomOf="@+id/textviewBranch"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/textviewplace"
+                app:layout_constraintTop_toTopOf="@+id/textviewBranch"
                 app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
             <TextView
-                android:id="@+id/textviewplace"
+                android:id="@+id/textviewBranch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Patna, Bihar"

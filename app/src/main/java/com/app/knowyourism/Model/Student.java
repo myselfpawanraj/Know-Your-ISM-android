@@ -1,11 +1,11 @@
 package com.app.knowyourism.Model;
 
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Student{
-
+public class Student implements Serializable {
     @SerializedName("Sex")
     @Expose
     private String sex;

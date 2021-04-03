@@ -32,9 +32,9 @@ public class SplashScreenActivity extends AppCompatActivity {
             int isLoggedIn = SplashScreenActivity.this.getSharedPreferences("SHARED_PREFS", MODE_PRIVATE).getInt("LOGIN_STATUS", 0);
             Intent i = null;
             switch (isLoggedIn){
-                case 1: i = new Intent(SplashScreenActivity.this, MainActivity.class);
+                case 1: i = new Intent(SplashScreenActivity.this, LoginActivity.class);
                     break;
-                case 0: i = new Intent(SplashScreenActivity.this, ConfirmActivity.class);
+                case 0: i = new Intent(SplashScreenActivity.this, LoginActivity.class);
                     break;
             }
             startActivity(i);
