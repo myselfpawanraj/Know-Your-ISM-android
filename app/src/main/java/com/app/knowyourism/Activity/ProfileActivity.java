@@ -27,8 +27,8 @@ public class ProfileActivity extends AppCompatActivity {
     Student student;
     TextView textviewname, textviewbranch, textviewplace, textviewadmnno, textViewfacebook;
     ImageView imageView;
-    String linkmmale = "https://image.freepik.com/free-vector/vector-avatar-smiling-man-facial-expression_102172-203.jpg",
-            linkfemale = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTZA_wIwT-DV4G3E3jdNZScRLQnH4faqTH2a7PrNwlhqP4W1Zjh&usqp=CAU";
+    final String MALE = "https://image.freepik.com/free-vector/vector-avatar-smiling-man-facial-expression_102172-203.jpg";
+    final String FEMALE = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTZA_wIwT-DV4G3E3jdNZScRLQnH4faqTH2a7PrNwlhqP4W1Zjh&usqp=CAU";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
                     .fit()
                     .into(imageView);
         } else {
-            Picasso.get().load((student.getSex().equals("M") ? linkmmale : linkfemale)).into(imageView);
+            Picasso.get().load((student.getSex().equals("M") ? MALE : FEMALE)).into(imageView);
         }
     }
 }

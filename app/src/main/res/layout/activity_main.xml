@@ -7,263 +7,102 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity" >
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Feeds" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fa_bookmark"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="false"
+            android:src="@drawable/ic_baseline_star_24"
+            app:backgroundTint="@color/purple_200"
+            app:fabCustomSize="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:maxImageSize="30dp" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fa_task3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:clickable="true"
-                android:src="@drawable/ic_baseline_star_24"
-                app:backgroundTint="@color/white"
-                app:fabCustomSize="50dp"
-                app:layout_constraintEnd_toStartOf="@+id/fa_task"
-                app:layout_constraintTop_toTopOf="@+id/fa_task"
-                app:maxImageSize="30dp" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fa_club"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="false"
+            android:src="@drawable/ic_club"
+            app:backgroundTint="@color/purple_200"
+            app:fabCustomSize="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/fa_bookmark"
+            app:layout_constraintEnd_toEndOf="@+id/fa_bookmark"
+            app:maxImageSize="40dp" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fa_club"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:clickable="true"
-                android:src="@drawable/ic_club"
-                app:backgroundTint="@color/white"
-                app:fabCustomSize="50dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fa_task"
-                app:maxImageSize="40dp" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fa_task"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="false"
+            android:src="@drawable/add_sub"
+            app:backgroundTint="@color/purple_200"
+            app:fabCustomSize="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/fa_club"
+            app:layout_constraintEnd_toEndOf="@+id/fa_club"
+            app:maxImageSize="40dp" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fa_task"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:clickable="true"
-                android:src="@drawable/add_sub"
-                app:backgroundTint="@color/white"
-                app:fabCustomSize="50dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:maxImageSize="40dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Post"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@color/colorAccent"
+            app:cornerRadius="25dp"
+            app:icon="@android:drawable/ic_input_add"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:rippleColor="@color/colorPrimaryDark" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/norecordfound" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/main_card_back"
-                    android:paddingBottom="16dp">
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="32dp"
-                        android:fontFamily="@font/amaranth_bold"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:text="My Dashboard"
-                        android:textColor="@android:color/secondary_text_light"
-                        android:textSize="18sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/textViewUpdate"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardViewOther"
-                        android:layout_width="150dp"
-                        android:layout_height="170dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginRight="24dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardViewSpy">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/others" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="center"
-                                android:text="Other Stuffs"
-                                android:textColor="@android:color/secondary_text_light" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardViewStudy"
-                        android:layout_width="150dp"
-                        android:layout_height="170dp"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginRight="24dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/cardViewSpy">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/study_material" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="center"
-                                android:text="Study Materials"
-                                android:textColor="@android:color/secondary_text_light" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardViewMap"
-                        android:layout_width="150dp"
-                        android:layout_height="170dp"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginTop="16dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="10dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardViewSpy">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/map" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="center"
-                                android:text="Maps &amp; Places"
-                                android:textColor="@android:color/secondary_text_light" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardViewSpy"
-                        android:layout_width="150dp"
-                        android:layout_height="170dp"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginTop="16dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="10dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/detective" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="center"
-                                android:text="Student Spy"
-                                android:textColor="@android:color/secondary_text_light" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/textViewUpdate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:text="Update Profile"
-                        android:textColor="#000000"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/textView2"
-                        app:layout_constraintTop_toTopOf="@+id/textView2" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/main_drawer"

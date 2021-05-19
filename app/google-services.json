@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1057056955137",
+    "firebase_url": "https://jaano-7022c.firebaseio.com",
+    "project_id": "jaano-7022c",
+    "storage_bucket": "jaano-7022c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057056955137:android:f699cd891924f4e0bad900",
+        "android_client_info": {
+          "package_name": "com.app.knowyourism"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057056955137-qid4asn0jr23srh4k81hsg5f9av95muh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPDYeSqX0Dvc5oUPlFhn80cYEmKJ9ytfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057056955137-qid4asn0jr23srh4k81hsg5f9av95muh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:scrollbars="vertical">
+  <RelativeLayout
+    android:id="@+id/rel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="10dp">
+
+    <ImageButton
+      android:id="@+id/bt_close"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignEnd="@+id/detail_lay"
+      android:layout_marginEnd="2dp"
+      android:background="@drawable/ic_baseline_close_24"
+        android:layout_alignRight="@+id/detail_lay"
+        android:layout_marginRight="2dp" />
+    <ProgressBar
+      android:id="@+id/progress_bar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:elevation="12dp"
+      android:visibility="gone"/>
+    <EditText
+      android:id="@+id/head"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/bt_close"
+      android:hint="Heading"
+      android:inputType="textPersonName"/>
+    <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/detail_lay"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/head"
+      app:hintEnabled="false">
+      <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Detail"
+        android:inputType="textMultiLine"
+        android:minHeight="100dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <ImageView
+      android:id="@+id/image"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/detail_lay"
+      android:layout_centerHorizontal="true"
+      android:layout_margin="8dp"
+      android:adjustViewBounds="true"
+      android:scaleType="centerInside"/>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/image"
+      android:layoutDirection="rtl"
+      android:orientation="horizontal"
+      android:padding="16dp"
+      >
+
+      <ImageButton
+          android:id="@+id/send"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:layout_gravity="bottom"
+          android:layout_marginEnd="16dp"
+          android:layout_marginRight="16dp"
+          android:background="@drawable/ic_baseline_cloud_upload_24" />
+
+      <ImageButton
+          android:id="@+id/bt_img"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:layout_gravity="bottom"
+          android:background="@drawable/ic_baseline_add_a_photo_24" />
+    </LinearLayout>
+
+  </RelativeLayout>
+</ScrollView>
+
+

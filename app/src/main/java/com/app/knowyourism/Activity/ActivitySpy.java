@@ -26,23 +26,20 @@ public class ActivitySpy extends AppCompatActivity {
         editTextcity= findViewById( R.id.editTextcity );
         editTextadmnno= findViewById( R.id.editTextadmnno );
 
-        buttonsearch.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                name=editTextname.getText().toString();
-                city=editTextcity.getText().toString();
-                admnno=editTextadmnno.getText().toString();
+        buttonsearch.setOnClickListener(v -> {
+            name=editTextname.getText().toString();
+            city=editTextcity.getText().toString();
+            admnno=editTextadmnno.getText().toString();
 
-                if(name.isEmpty() && city.isEmpty() && admnno.isEmpty()){
-                    Toast.makeText( getApplication(),"Fill up at least one Query!",Toast.LENGTH_SHORT ).show();
-                    return;
-                }
-                Intent i = new Intent(getApplicationContext(),SearchActivity.class);
-                i.putExtra( "Name", name );
-                i.putExtra( "City", city );
-                i.putExtra( "Admnno",admnno );
-                startActivity( i );
+            if(name.isEmpty() && city.isEmpty() && admnno.isEmpty()){
+                Toast.makeText( getApplication(),"Fill up at least one Query!",Toast.LENGTH_SHORT ).show();
+                return;
             }
-        } );
+            Intent i = new Intent(getApplicationContext(),SearchActivity.class);
+            i.putExtra( "Name", name );
+            i.putExtra( "City", city );
+            i.putExtra( "Admnno",admnno );
+            startActivity( i );
+        });
     }
 }

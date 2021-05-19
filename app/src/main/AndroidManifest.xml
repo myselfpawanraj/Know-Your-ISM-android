@@ -3,6 +3,7 @@
     package="com.app.knowyourism">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +12,11 @@
         android:roundIcon="@drawable/logo_without_bg"
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowYourISM">
-        <activity android:name=".Activity.ForgetPassActivity"></activity>
-        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.Contacts.ContactsActivity"></activity>
+        <activity android:name=".Activity.Clubs.ClubActivity" />
+        <activity android:name=".Activity.LostAndFound.LnFActivity" />
+        <activity android:name=".Activity.ForgetPass.ForgetPassActivity" />
+        <activity android:name=".Activity.Login.LoginActivity" />
         <activity android:name=".Activity.OtherStuffActivity" />
         <activity android:name=".Activity.ConfirmActivity" />
         <activity android:name=".Activity.UpdateProfileActivity" />

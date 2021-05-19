@@ -1,4 +1,4 @@
-package com.app.knowyourism.Activity;
+package com.app.knowyourism.Activity.ForgetPass;
 
 import androidx.appcompat.app.AppCompatActivity;
 
