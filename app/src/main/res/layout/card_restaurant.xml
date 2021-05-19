@@ -14,7 +14,7 @@
         app:cardElevation="10dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true"
-        app:strokeColor="@color/design_default_color_primary"
+        app:strokeColor="@color/kyi_green"
         app:strokeWidth="0.5dp">
 
         <LinearLayout
@@ -28,9 +28,8 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/back" />
+                android:layout_height="180dp"
+                android:scaleType="centerCrop" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,13 +38,12 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="Heritage Building"
                     android:textColor="#000000"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -72,18 +70,17 @@
 
                 <ImageView
                     android:id="@+id/imageView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     app:srcCompat="@drawable/ic_baseline_sort_24" />
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_light"
+                    android:fontFamily="sans-serif-medium"
                     android:gravity="center"
-                    android:text="Something descriptive here.."
-                    android:textStyle="italic" />
+                    android:text="Something descriptive here.." />
 
             </LinearLayout>
 
@@ -93,7 +90,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/ic_baseline_emoji_transportation_24" />
 
@@ -102,9 +99,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins_light"
-                    android:text="Fare: "
-                    android:textStyle="italic" />
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Fare: " />
             </LinearLayout>
 
             <LinearLayout
@@ -113,8 +109,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
                 <TextView
@@ -122,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins_light"
+                    android:fontFamily="sans-serif-medium"
                     android:text="500 km from campus, Easy to reach!"
                     android:textStyle="italic" />
             </LinearLayout>
@@ -185,7 +181,7 @@
             <com.google.android.gms.maps.MapView
                 android:id="@+id/checkInMapView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:apiKey="AIzaSyArXZakzEmzahiBEU8Q6_ptlz881jEPT5A"
                 map:cameraZoom="15"
                 map:mapType="normal" />

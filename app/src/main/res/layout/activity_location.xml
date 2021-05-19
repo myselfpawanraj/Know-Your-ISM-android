@@ -7,6 +7,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Locations">
+        <ImageView
+            android:id="@+id/image_map"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_baseline_map_24"
+            android:layout_gravity="right"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp" />
+    </androidx.appcompat.widget.Toolbar>
+
     <FrameLayout
         android:id="@+id/fragment"
         android:layout_width="match_parent"

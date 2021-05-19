@@ -14,7 +14,7 @@
         app:cardElevation="10dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true"
-        app:strokeColor="@color/design_default_color_primary"
+        app:strokeColor="@color/colorOnPrimary"
         app:strokeWidth="0.5dp">
 
         <LinearLayout
@@ -26,9 +26,8 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/back" />
+                android:layout_height="180dp"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -37,7 +36,6 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins"
                 android:gravity="center"
-                android:text="Heritage Building"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -45,15 +43,14 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:text="lauda ka heritage building hai......"
-                android:textStyle="italic" />
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center" />
 
             <com.google.android.gms.maps.MapView
                 android:id="@+id/checkInMapView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
                 android:apiKey="AIzaSyArXZakzEmzahiBEU8Q6_ptlz881jEPT5A"
                 map:cameraZoom="15"
                 map:mapType="normal" />

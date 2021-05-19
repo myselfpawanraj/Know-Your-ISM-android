@@ -48,7 +48,7 @@ public class RestaurantResultAdapter extends RecyclerView.Adapter<RestaurantResu
         final Location2 singleCheckIn = items.get( position );
         holder.textViewName.setText( singleCheckIn.getName() );
         holder.textViewDesc.setText( singleCheckIn.getDescription() );
-        holder.textViewAmbience.setText( "Ambience: " + singleCheckIn.getRating().getAmbience() );
+        holder.textViewAmbience.setText( "Ambiance: " + singleCheckIn.getRating().getAmbience() );
         holder.textViewService.setText( "Service: " +  singleCheckIn.getRating().getService() );
         holder.textViewFood.setText( "Food: " +  singleCheckIn.getRating().getFood() );
         holder.textViewFare.setText( "Fare: ₹" + singleCheckIn.getCosts().getRickshaw() );
@@ -59,7 +59,7 @@ public class RestaurantResultAdapter extends RecyclerView.Adapter<RestaurantResu
         Glide
                 .with(context)
                 .load(singleCheckIn.getPhoto().getSmall())
-                .placeholder(R.drawable.logo)
+                .placeholder(R.drawable.map)
                 .into(holder.imageView);
         //Glide.with(context).load(singleCheckIn.getPhoto().getSmall()).into( holder.imageView );
         //Picasso.get().load().into( holder.imageView );

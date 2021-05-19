@@ -18,7 +18,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:padding="16dp"
         app:cardCornerRadius="4dp"
@@ -104,11 +104,13 @@
                 android:id="@+id/buttonsearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/centre_button"
+                android:layout_marginTop="32dp"
                 android:text="Search"
-                app:cornerRadius="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:textColor="#FFFFFF"
+                app:backgroundTint="@color/purple_700"
+                app:cornerRadius="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -121,7 +123,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="cursive"
-        android:text="Student Spy!"
+        android:text="Student Search!"
         android:textColor="#000000"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"

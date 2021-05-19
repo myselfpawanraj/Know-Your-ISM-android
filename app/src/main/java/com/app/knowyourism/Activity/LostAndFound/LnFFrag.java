@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.FileUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,6 +75,7 @@ public class LnFFrag  extends DialogFragment {
         detail.setText("____ belonging to Mr./Mrs. ___ has been lost/found somewhere between ______. If found, please contact ______.\n (item description)");
         send=view.findViewById(R.id.send);
 
+        send.setEnabled(false);
         bt_close.setOnClickListener(v->dismiss());
 
         imageButton.setOnClickListener(v -> {
@@ -82,6 +84,13 @@ public class LnFFrag  extends DialogFragment {
         });
 
         send.setOnClickListener(v ->{
+            String h = heading.getText().toString().trim();
+            String d = detail.getText().toString().trim();
+
+            if(h.isEmpty() || d.isEmpty()){
+                Toast.makeText(getContext(), "Fields missing!", Toast.LENGTH_SHORT).show();
+                return;
+            }
             changeProgressBar();
             uploadData();
         });
@@ -96,17 +105,19 @@ public class LnFFrag  extends DialogFragment {
         }
         String h = heading.getText().toString().trim();
         String d = detail.getText().toString().trim();
+        String user = "60a3733180f187001e99857a";
+        user = user.replaceAll("\"", "");
 
-        MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData("photo", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
 
-        ResultApi.getService().postLnF(h, d,true , "60a3733180f187001e99857a", filePart).enqueue(new Callback< LostFound >() {
+        ResultApi.getService().postLnF(h, d,true , user, filePart).enqueue(new Callback< LostFound >() {
             @Override
             public void onResponse(@NonNull Call<LostFound> call, @NonNull Response<LostFound> response) {
                 changeProgressBar();
                 if (response.isSuccessful() && response.body() != null) {
-                    Snackbar.make(getActivity().findViewById(R.id.constraint_layout), "Uploaded", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(getActivity().findViewById(R.id.coordinator_layout), "Successfully Uploaded", Snackbar.LENGTH_LONG).show();
                 } else {
-                    Snackbar.make(getActivity().findViewById(R.id.constraint_layout), "Failed to Upload", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(getActivity().findViewById(R.id.coordinator_layout), "Failed to Upload", Snackbar.LENGTH_LONG).show();
                 }
                 dismiss();
             }
@@ -114,7 +125,7 @@ public class LnFFrag  extends DialogFragment {
             @Override
             public void onFailure(@NonNull Call<LostFound> call, @NonNull Throwable t) {
                 changeProgressBar();
-                Snackbar.make(getActivity().findViewById(R.id.constraint_layout), "Failed to Upload", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(getActivity().findViewById(R.id.coordinator_layout), "Failed due to unexpected error", Snackbar.LENGTH_LONG).show();
                 dismiss();
             }
         });
@@ -128,6 +139,7 @@ public class LnFFrag  extends DialogFragment {
             public void onImagesPicked(@NonNull List<File> imageFiles, EasyImage.ImageSource source, int type) {
                 imageView.setImageURI(Uri.fromFile(imageFiles.get(0)));
                 file = imageFiles.get(0);
+                send.setEnabled(true);
             }
         });
     }

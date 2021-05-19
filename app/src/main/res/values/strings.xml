@@ -13,5 +13,19 @@
     <string name="contact_us">Contact Us</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="tab_text_1">Lost</string>
+    <string name="tab_text_2">Found</string>
+    <string name="campus_map">Campus Map</string>
+    <string name="marker_penman">Penman Auditorium</string>
+    <string name="marker_sac">SAC</string>
+    <string name="marker_heritage">Heritage Building</string>
+    <string name="marker_main_entrance">Entrance</string>
+    <string name="marker_jasper">Jasper Hostel</string>
+    <string name="marker_ruby">Ruby Hostel</string>
+    <string name="marker_hc">Health Center</string>
+    <string name="marker_title">You</string>
+    <string name="dialog_title">Location Permission Needed</string>
+    <string name="dialog_message">This app needs the Location permission, please accept to use location functionality</string>
 
 </resources>

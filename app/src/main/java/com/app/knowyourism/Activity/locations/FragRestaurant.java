@@ -1,4 +1,4 @@
-package com.app.knowyourism.LocationFragments;
+package com.app.knowyourism.Activity.locations;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,12 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.app.knowyourism.Activity.LocationActivity;
-import com.app.knowyourism.Adapter.LocationResultAdapter;
 import com.app.knowyourism.Adapter.RestaurantResultAdapter;
 import com.app.knowyourism.Api.ResultApi;
-import com.app.knowyourism.Model.Location.LocationResult;
-import com.app.knowyourism.Model.Restaurant.Location2;
 import com.app.knowyourism.Model.Restaurant.Location2;
 import com.app.knowyourism.Model.Restaurant.Restaurant;
 import com.app.knowyourism.R;
@@ -57,8 +53,6 @@ public class FragRestaurant extends Fragment {
                 studentList = response.body().getLocations();
                 progressBar.setVisibility( View.GONE );
                 setUpRecyclerView();
-                Toast.makeText(getActivity(), studentList.size()+" Result!",
-                        Toast.LENGTH_LONG).show();
             }
 
             @Override

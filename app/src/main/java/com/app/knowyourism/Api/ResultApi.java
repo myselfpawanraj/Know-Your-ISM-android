@@ -30,7 +30,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public class ResultApi {
-    private static final String BASE_URL = "https://kyi.herokuapp.com/api/v2/";
+    public static final String BASE_URL = "https://kyi.herokuapp.com/api/";
     public static PostService postService = null;
 
     public static PostService getService()
@@ -61,7 +61,7 @@ public class ResultApi {
                 @Query("sex") String sex,
                 @Query("admno") String admno
         );
-        @PATCH("https://kyi.herokuapp.com/api/students/{ID}")
+        @PATCH("students/{ID}")
         Call<Student> updateStudents(
                 @Path( "ID" ) String id,
                 @Body Student post
@@ -69,29 +69,29 @@ public class ResultApi {
 
         //Login
 
-        @POST("login/system/initialise")
+        @POST("v2/login/system/initialise")
         Call< OtpInitiateResponse > putOtpRequest(@Body OtpInitiateBody otpInitiateBody);
 
 
-        @POST("login/system/access_token")
+        @POST("v2/login/system/access_token")
         Call< LoginResponse > getLogin(@Body LoginBody loginBody);
 
-        @GET("grievances")
+        @GET("v2/grievances")
         Call< FeedResponse > getFeeds();
 
-        @GET("laf")
+        @GET("v2/laf")
         Call< LnFResponse > getLnF();
 
-        @GET("clubs")
+        @GET("v2/clubs")
         Call< ClubsResponse > getClubs();
 
         @Multipart
-        @POST("laf")
+        @POST("v2/laf")
         Call< LostFound > postLnF(
-                @Part String title,
-                @Part String details,
-                @Part Boolean found,
-                @Part String user,
+                @Part("title") String title,
+                @Part("description") String details,
+                @Part("found") Boolean found,
+                @Part("userId") String user,
                 @Part MultipartBody.Part photo);
     }
 }

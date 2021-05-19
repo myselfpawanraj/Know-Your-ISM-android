@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,27 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.knowyourism.Activity.Clubs.ClubActivity;
-import com.app.knowyourism.Activity.Contacts.ContactsActivity;
 import com.app.knowyourism.Activity.LostAndFound.LnFActivity;
-import com.app.knowyourism.Adapter.ContactAdapter;
+import com.app.knowyourism.Activity.locations.LocationActivity;
 import com.app.knowyourism.Adapter.FeedAdapter;
 import com.app.knowyourism.Api.ResultApi;
-import com.app.knowyourism.Model.Club;
-import com.app.knowyourism.Model.Contacts;
 import com.app.knowyourism.Model.Feed.Feed;
 import com.app.knowyourism.Model.Feed.FeedResponse;
-import com.app.knowyourism.Model.Location.LocationResult;
-import com.app.knowyourism.Model.OtpInitiateResponse;
 import com.app.knowyourism.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -67,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private int mSelectedId;
-    private static final String url = "https://examupdates.in/b-tech-books/";
+    private static final String url = "https://drive.google.com/folderview?id=1Nmoij3SPHyc9r5oPXGy8MVZ3Jf2NUDi1";
 
     //Recycler View
     FeedAdapter adapter;
@@ -123,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.student_spy:
                 intent = new Intent(MainActivity.this,ActivitySpy.class);
                 break;
-            case R.id.study_materials :
+            case R.id.study_materials:
                 intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData( Uri.parse(url));
                 break;
@@ -163,25 +155,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        Intent intent;
+        Intent intent = null;
         switch (id){
             case R.id.fa_bookmark:
-                intent = new Intent(MainActivity.this,ActivitySpy.class);
+                Toast.makeText(MainActivity.this, "Bookmark feature not Available!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.fa_task :
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
+                Toast.makeText(MainActivity.this, "Todo Feature not Available!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.fa_club :
                 intent = new Intent(MainActivity.this, ClubActivity.class);
                 break;
             case R.id.button2 :
-                intent =  new Intent(MainActivity.this, OtherStuffActivity.class);
+//                Toast.makeText(MainActivity.this, "Todo Feature not Available!", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + id);
         }
-        startActivity(intent);
+        if(intent!=null)
+            startActivity(intent);
     }
 
     private void getData() {
@@ -192,7 +184,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (response.isSuccessful() && response.body() != null && response.body().getRecords() != null) {
                     feeds = response.body().getRecords();
                     adapter.setData(feeds);
-
                     Toast.makeText(MainActivity.this, feeds.size() + " Feeds Available", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(MainActivity.this, "No Feeds at this moment", Toast.LENGTH_SHORT).show();

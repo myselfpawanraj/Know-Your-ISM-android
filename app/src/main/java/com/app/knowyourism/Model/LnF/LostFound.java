@@ -7,12 +7,12 @@ public class LostFound {
     private String title;
     @SerializedName("description")
     private String details;
-    @SerializedName("imageUrl")
-    private String url;
     @SerializedName("found")
     private boolean found;
     @SerializedName("updatedAt")
     private String date;
+    @SerializedName("_id")
+    private String _id;
     @SerializedName("userId")
     private String user;
 
@@ -39,14 +39,6 @@ public class LostFound {
         this.details = details;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public boolean isFound() {
         return found;
     }
@@ -65,5 +57,9 @@ public class LostFound {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public String get_id() {
+        return _id;
     }
 }

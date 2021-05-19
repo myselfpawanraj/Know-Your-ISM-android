@@ -39,8 +39,9 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_search );
         progressBar=findViewById( R.id.progressBar );
-        toolbar= (androidx.appcompat.widget.Toolbar) findViewById( R.id.toolbar );
+        toolbar= findViewById( R.id.toolbar );
         toolbar.setVisibility( View.GONE );
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -84,14 +85,10 @@ public class SearchActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+    public boolean onSupportNavigateUp() {
+        super.onBackPressed();
+        return super.onSupportNavigateUp();
     }
 }

@@ -56,7 +56,7 @@ public class LocationResultAdapter extends RecyclerView.Adapter<LocationResultAd
         Glide
                 .with(context)
                 .load(singleCheckIn.getPhoto().getSmall())
-                .placeholder(R.drawable.logo)
+                .placeholder(R.drawable.map)
                 .into(holder.imageView);
         //Glide.with(context).load(singleCheckIn.getPhoto().getSmall()).into( holder.imageView );
         //Picasso.get().load().into( holder.imageView );

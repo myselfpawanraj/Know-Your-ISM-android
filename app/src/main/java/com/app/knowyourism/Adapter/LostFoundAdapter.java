@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.app.knowyourism.Api.ResultApi;
 import com.app.knowyourism.Model.Feed.Feed;
 import com.app.knowyourism.Model.LnF.LostFound;
 import com.app.knowyourism.R;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+
+import retrofit2.Retrofit;
 
 public class LostFoundAdapter extends RecyclerView.Adapter< LostFoundAdapter.ViewHolder > {
     List< LostFound > postList = new ArrayList<>();
@@ -50,7 +53,7 @@ public class LostFoundAdapter extends RecyclerView.Adapter< LostFoundAdapter.Vie
 
         Glide
                 .with(context)
-                .load(lostFound.getUrl())
+                .load(ResultApi.BASE_URL + "laf/" + lostFound.get_id() + "/photo")
                 .placeholder(R.drawable.ic_baseline_luggage_24)
                 .into(h.imageView);
 
