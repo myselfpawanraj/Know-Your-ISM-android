@@ -15,6 +15,10 @@
             android:icon="@drawable/ic_baseline_person_search_24"
             android:title="@string/student_spy"/>
         <item
+            android:id="@+id/profs"
+            android:icon="@drawable/ic_baseline_person_search_24"
+            android:title="@string/profs"/>
+        <item
             android:id="@+id/places"
             android:icon="@drawable/ic_baseline_location_city_24"
             android:title="@string/places"/>

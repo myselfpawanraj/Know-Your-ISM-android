@@ -5,7 +5,7 @@
 
     <!--    For menu-->
     <string name="dashboard">Dashboard</string>
-    <string name="student_spy">Student Spy</string>
+    <string name="student_spy">Student Search</string>
     <string name="places">Campus &amp; Restaurants</string>
     <string name="study_materials">Study Material</string>
     <string name="lost_n_found">Lost And Found</string>
@@ -27,5 +27,6 @@
     <string name="marker_title">You</string>
     <string name="dialog_title">Location Permission Needed</string>
     <string name="dialog_message">This app needs the Location permission, please accept to use location functionality</string>
+    <string name="profs">Important Contacts</string>
 
 </resources>

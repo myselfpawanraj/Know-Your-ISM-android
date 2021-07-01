@@ -66,19 +66,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingLeft="8dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imageView11"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat="@drawable/ic_baseline_sort_24" />
+                    android:src="@drawable/ic_baseline_sort_24" />
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="sans-serif-condensed-light"
                     android:gravity="center"
                     android:text="Something descriptive here.." />
 
@@ -87,40 +88,41 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingLeft="8dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/ic_baseline_emoji_transportation_24" />
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_baseline_emoji_transportation_24" />
 
                 <TextView
                     android:id="@+id/textViewFare"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="sans-serif-condensed-light"
                     android:text="Fare: " />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingLeft="8dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat="@drawable/ic_baseline_location_on_24" />
+                    android:src="@drawable/ic_baseline_location_on_24" />
 
                 <TextView
                     android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="500 km from campus, Easy to reach!"
-                    android:textStyle="italic" />
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="500 km from campus, Easy to reach!" />
             </LinearLayout>
 
             <LinearLayout
@@ -196,7 +198,7 @@
                     android:id="@+id/imageView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_star_24" />
+                    android:src="@drawable/ic_baseline_star_24" />
 
                 <TextView
                     android:id="@+id/textViewAmbience"

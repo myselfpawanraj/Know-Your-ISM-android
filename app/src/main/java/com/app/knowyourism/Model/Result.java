@@ -8,12 +8,12 @@ import com.google.gson.annotations.SerializedName;
 
 public class Result {
 
-    @SerializedName("count")
+    @SerializedName("_total")
     @Expose
     private Integer count;
-    @SerializedName("students")
+    @SerializedName("records")
     @Expose
-    private List<Student> students = null;
+    private List<User> students = null;
     @SerializedName("_queryTime")
     @Expose
     private Integer queryTime;
@@ -26,11 +26,11 @@ public class Result {
         this.count = count;
     }
 
-    public List<Student> getStudents() {
+    public List<User> getStudents() {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
+    public void setStudents(List<User> students) {
         this.students = students;
     }
 

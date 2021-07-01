@@ -14,15 +14,16 @@
     android:orientation="horizontal">
 
       <androidx.cardview.widget.CardView
-          android:layout_width="64dp"
-          android:layout_height="64dp"
+          android:layout_width="75dp"
+          android:layout_height="75dp"
           android:layout_gravity="center"
-          app:cardCornerRadius="32dp">
+          app:cardCornerRadius="100dp">
 
           <ImageView
               android:id="@+id/contact_img"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:scaleType="centerCrop"
               app:srcCompat="@drawable/avatar" />
       </androidx.cardview.widget.CardView>
 
@@ -66,6 +67,8 @@
               android:id="@+id/contact_call"
               android:layout_width="24dp"
               android:layout_height="24dp"
+              android:layout_marginEnd="8dp"
+              android:layout_marginRight="8dp"
               android:src="@drawable/call" />
 
           <ImageView

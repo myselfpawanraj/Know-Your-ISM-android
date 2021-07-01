@@ -48,11 +48,11 @@ public class ConfirmActivity extends AppCompatActivity {
         Call<Result> postList;
         studentList = new ArrayList<>();
 
-        postList =  ResultApi.getService().getStudents(null,null,name,null,null,admno);
+        postList =  ResultApi.getService().getStudents(null,null,name,null,null,admno,null);
         postList.enqueue(new Callback<Result>() {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
-                studentList = response.body().getStudents();
+//                studentList = response.body().getStudents();
                 if(studentList.size()==0){
                     Toast.makeText(getApplicationContext(), "No Result!",
                             Toast.LENGTH_LONG).show();

@@ -54,7 +54,6 @@ public class ClubAdapter extends RecyclerView.Adapter< ClubAdapter.Holder > {
 
     public void setData(List< Club > newList) {
         clubs.clear();
-        Collections.reverse(newList);
         clubs.addAll(newList);
         this.notifyDataSetChanged();
     }

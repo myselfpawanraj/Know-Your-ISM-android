@@ -6,9 +6,10 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginLeft="8dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="4dp"
     android:layout_marginEnd="8dp"
     android:layout_marginRight="8dp"
+    android:layout_marginBottom="4dp"
     android:orientation="vertical"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp">
@@ -36,7 +37,7 @@
         android:maxLines="3"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:paddingBottom="16dp"/>
+        android:paddingBottom="16dp" />
 
     <LinearLayout
         android:id="@+id/linear_profile"

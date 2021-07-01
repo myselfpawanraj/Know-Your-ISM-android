@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.app.knowyourism.Activity.Clubs.Contract;
 import com.app.knowyourism.Model.Club;
 import com.app.knowyourism.Model.Contacts;
+import com.app.knowyourism.Model.User;
 import com.app.knowyourism.R;
 import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -27,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ContactAdapter extends RecyclerView.Adapter< ContactAdapter.Holder > {
-    private List< Contacts > clubs = new ArrayList<>();
+    private List< User > contacts = new ArrayList<>();
     private final Context context;
 
     public ContactAdapter(Context context) {
@@ -43,23 +44,23 @@ public class ContactAdapter extends RecyclerView.Adapter< ContactAdapter.Holder 
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Contacts c = clubs.get(position);
+        User c = contacts.get(position);
 
         holder.name.setText(c.getName());
         holder.phone.setText(c.getPhone());
-        holder.dept.setText(c.getDept());
-        holder.email.setText(c.getEmail());
+        holder.dept.setText(c.getDepartment());
+        holder.email.setText(c.getInstituteEmail());
         holder.call.setOnClickListener(v-> makeCall(c.getPhone()));
-        holder.send_mail.setOnClickListener(v-> sendMail(c.getEmail()));
+        holder.send_mail.setOnClickListener(v-> sendMail(c.getInstituteEmail()));
 
         Glide
                 .with(context)
-                .load(c.getImage())
+                .load(c.getPhotoURI())
                 .placeholder(R.drawable.ic_account_circle_black_24dp)
                 .into(holder.icon);
     }
     void makeCall(String num) {
-        if (!num.trim().equals("0")) {
+        if (num!=null && !num.trim().equals("0")) {
             Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + num.trim()));
             context.startActivity(intent);
         } else {
@@ -68,10 +69,10 @@ public class ContactAdapter extends RecyclerView.Adapter< ContactAdapter.Holder 
     }
 
     void sendMail(String s) {
-        if (!s.trim().isEmpty()) {
-            String uriText = "mailto:${Uri.encode(s.trim())}" +
-                    "?subject=${Uri.encode(\"Subject\")}" +
-                    "&body=${Uri.encode(\"the body of the message\")}";
+        if (s!=null && !s.trim().isEmpty()) {
+            String uriText = "mailto:" + Uri.encode(s) +
+                    "?subject=" + Uri.encode("Regarding the ...") +
+                    "&body=" + Uri.encode("Dear Sir/ma'am\n\nthe body of the message\n\nYours truly,\n");
 
             Intent send = new Intent(Intent.ACTION_SENDTO, Uri.parse(uriText));
             context.startActivity(Intent.createChooser(send, "Send mail..."));
@@ -82,11 +83,13 @@ public class ContactAdapter extends RecyclerView.Adapter< ContactAdapter.Holder 
 
     @Override
     public int getItemCount() {
-        return clubs.size();
+        return contacts.size();
     }
 
-    public void setData(List<Contacts> clubList) {
-        this.clubs = clubList;
+    public void setData(List<User> contactsList) {
+        this.contacts.clear();
+        this.contacts.addAll(contactsList);
+        this.notifyDataSetChanged();
     }
 
     public static class Holder extends RecyclerView.ViewHolder {

@@ -13,6 +13,7 @@ import com.app.knowyourism.Model.OtpInitiateResponse;
 import com.app.knowyourism.Model.Restaurant.Restaurant;
 import com.app.knowyourism.Model.Result;
 import com.app.knowyourism.Model.Student;
+import com.app.knowyourism.Model.User;
 
 import java.io.File;
 
@@ -33,15 +34,13 @@ public class ResultApi {
     public static final String BASE_URL = "https://kyi.herokuapp.com/api/";
     public static PostService postService = null;
 
-    public static PostService getService()
-    {
-        if(postService==null)
-        {
+    public static PostService getService() {
+        if (postService == null) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
-                    .addConverterFactory( GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            postService=retrofit.create(PostService.class);
+            postService = retrofit.create(PostService.class);
         }
         return postService;
 
@@ -49,23 +48,30 @@ public class ResultApi {
 
     public interface PostService {
         @GET("locations/college")
-        Call<LocationResult> getLocation();
+        Call< LocationResult > getLocation();
+
         @GET("locations/restaurant")
-        Call<Restaurant> getRestaurant();
-        @GET("search?")
-        Call<Result> getStudents(
+        Call< Restaurant > getRestaurant();
+
+        @GET("v2/users?")
+        Call< Result > getStudents(
                 @Query("limit") String limit,
                 @Query("skip") String skip,
                 @Query("name") String name,
                 @Query("house") String house,
                 @Query("sex") String sex,
-                @Query("admno") String admno
+                @Query("admno") String admno,
+                @Query("filter") String filter
         );
+
         @PATCH("students/{ID}")
-        Call<Student> updateStudents(
-                @Path( "ID" ) String id,
+        Call< Student > updateStudents(
+                @Path("ID") String id,
                 @Body Student post
         );
+
+        @GET("v2/users/{ID}")
+        Call< User > getUser(@Path("ID") String id);
 
         //Login
 

@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.app.knowyourism.Activity.Clubs.ClubActivity;
+import com.app.knowyourism.Activity.Contacts.ContactsActivity;
 import com.app.knowyourism.Activity.LostAndFound.LnFActivity;
 import com.app.knowyourism.Activity.locations.LocationActivity;
 import com.app.knowyourism.Adapter.FeedAdapter;
@@ -26,6 +27,9 @@ import com.app.knowyourism.Api.ResultApi;
 import com.app.knowyourism.Model.Feed.Feed;
 import com.app.knowyourism.Model.Feed.FeedResponse;
 import com.app.knowyourism.R;
+import com.app.knowyourism.Utilities.HelperClass;
+import com.app.knowyourism.Utilities.Prefs;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -54,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonPost;
     @BindView (R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.shimmer_view_container)
+    ShimmerFrameLayout shimmer_view_container;
 
     private NavigationView mDrawer;
     private DrawerLayout mDrawerLayout;
@@ -75,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonTask.setOnClickListener(this);
         buttonClub.setOnClickListener(this);
         buttonPost.setOnClickListener(this);
-
 
         setToolbar();
         initView();
@@ -115,12 +120,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.student_spy:
                 intent = new Intent(MainActivity.this,ActivitySpy.class);
                 break;
+            case R.id.profs:
+                intent = new Intent(MainActivity.this, ContactsActivity.class);
+                break;
             case R.id.study_materials:
                 intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData( Uri.parse(url));
                 break;
             case R.id.my_profile :
-                intent = new Intent(MainActivity.this, ConfirmActivity.class);
+                intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.putExtra(HelperClass.USER_ID, "60a4f412ae777b22f897a063");
                 break;
             case R.id.contact_us :
                 intent =  new Intent(MainActivity.this, OtherStuffActivity.class);
@@ -177,10 +186,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void getData() {
-
+        shimmer_view_container.setVisibility(View.VISIBLE);
         ResultApi.getService().getFeeds().enqueue(new Callback< FeedResponse >() {
             @Override
             public void onResponse(@NonNull Call<FeedResponse> call, @NonNull Response<FeedResponse> response) {
+                shimmer_view_container.setVisibility(View.GONE);
                 if (response.isSuccessful() && response.body() != null && response.body().getRecords() != null) {
                     feeds = response.body().getRecords();
                     adapter.setData(feeds);

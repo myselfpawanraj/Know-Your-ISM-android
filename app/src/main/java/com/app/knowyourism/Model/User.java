@@ -3,60 +3,59 @@ package com.app.knowyourism.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User implements Serializable {
     @SerializedName("clubs")
-    @Expose
-    private List<String> clubs = null;
+    private List<String> clubs = new ArrayList<>();
     @SerializedName("newUser")
-    @Expose
     private Boolean newUser;
     @SerializedName("roles")
-    @Expose
-    private List<String> roles = null;
+    private List<String> roles = new ArrayList<>();
     @SerializedName("reputation")
-    @Expose
     private Integer reputation;
     @SerializedName("deleted")
-    @Expose
     private Boolean deleted;
     @SerializedName("_id")
-    @Expose
     private String id;
     @SerializedName("instituteEmail")
-    @Expose
     private String instituteEmail;
     @SerializedName("name")
-    @Expose
     private String name;
     @SerializedName("admissionNumber")
-    @Expose
     private String admissionNumber;
     @SerializedName("department")
-    @Expose
     private String department;
     @SerializedName("course")
-    @Expose
     private String course;
     @SerializedName("personalEmail")
-    @Expose
     private String personalEmail;
+    @SerializedName("phone")
+    private String phone;
+    @SerializedName("photoURI")
+    private String photoURI;
     @SerializedName("createdAt")
-    @Expose
     private String createdAt;
     @SerializedName("updatedAt")
-    @Expose
     private String updatedAt;
     @SerializedName("__v")
-    @Expose
     private Integer v;
 
-    public List<String> getClubs() {
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public List< String > getClubs() {
         return clubs;
     }
 
-    public void setClubs(List<String> clubs) {
+    public void setClubs(List< String > clubs) {
         this.clubs = clubs;
     }
 
@@ -68,11 +67,11 @@ public class User {
         this.newUser = newUser;
     }
 
-    public List<String> getRoles() {
+    public List< String > getRoles() {
         return roles;
     }
 
-    public void setRoles(List<String> roles) {
+    public void setRoles(List< String > roles) {
         this.roles = roles;
     }
 
@@ -146,6 +145,14 @@ public class User {
 
     public void setPersonalEmail(String personalEmail) {
         this.personalEmail = personalEmail;
+    }
+
+    public String getPhotoURI() {
+        return photoURI;
+    }
+
+    public void setPhotoURI(String photoURI) {
+        this.photoURI = photoURI;
     }
 
     public String getCreatedAt() {
