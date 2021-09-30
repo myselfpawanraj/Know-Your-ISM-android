@@ -7,7 +7,7 @@ Know Your ISM (KYI) is set of multiple useful services that we will list in the 
 - ✨ The KYI mobile and web apps both provide a control dashboard to access and use this dataset for multiple purposes that we list in the following pages.
 
 ### WHAT ARE WE SOLVING?
-To provide a platform where students within the campus can post their grievances and authorities can take actions to address them promptly.
+To provide a platform where students within the campus can post their grievances and authorities can take actions to address them quickly.
 The students face various issues in their day to day lives  such as adjustment issues, financial crises, mental  distress, mess and hygiene-related issues, hostel maintenance issues, grievance redressal issues, etc. To tackle these issues, there is much need of a redress mechanism where students can post their problems.
 
 ### Features
@@ -55,3 +55,4 @@ kyi uses a number of open source projects to work properly:
 
 ***
 ##### You can run this Android app on [Appetize.io](https://appetize.io/app/3v4makdwza4xnb6q6wtn9k22q0?device=pixel4xl&scale=50&orientation=portrait&osVersion=10.0&deviceColor=black)
+
