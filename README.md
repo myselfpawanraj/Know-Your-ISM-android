@@ -1,14 +1,14 @@
 ## Know Your ISM 
 #### *College Grievance Redressal System*
 
-Know Your ISM (KYI) is set of multiple useful services that we will list in the coming few pages. All of these stem from one single cloud-based dataset of students, professors, officials,  workers, alumni, locations and clubs across IIT (ISM) Dhanbad.
+Know Your ISM (KYI) is a set of multiple useful services we will list in the following few pages. These stem from one single cloud-based dataset of students, professors, officials,  workers, alums, locations and clubs across IIT (ISM) Dhanbad.
 - ✨ KYI is like the MIS. But much faster, more extensive, more featured and vastly more accessible than the latter.
-- ✨ So, the system is formed of two components: the cloud service APIs and the client apps (on mobile and the web).
-- ✨ The KYI mobile and web apps both provide a control dashboard to access and use this dataset for multiple purposes that we list in the following pages.
+- ✨ So, the system comprises two components: the cloud service APIs and the client apps (on mobile and the web).
+- ✨ The KYI mobile and web apps provide a control dashboard to access and use this dataset for multiple purposes that we list in the following pages.
 
 ### WHAT ARE WE SOLVING?
-To provide a platform where students within the campus can post their grievances and authorities can take actions to address them quickly.
-The students face various issues in their day to day lives  such as adjustment issues, financial crises, mental  distress, mess and hygiene-related issues, hostel maintenance issues, grievance redressal issues, etc. To tackle these issues, there is much need of a redress mechanism where students can post their problems.
+To provide a platform where students within the campus can post their grievances and authorities can take action to address them quickly.
+The students face various issues in their day-to-day lives, such as adjustment issues, financial crises, mental distress, mess and hygiene-related issues, hostel maintenance issues, grievance redressal issues, etc. To tackle these issues, there is much need for a redress mechanism where students can post their problems.
 
 ### Features
 
@@ -18,12 +18,12 @@ The students face various issues in their day to day lives  such as adjustment i
 
 
 ### Tech Used
-kyi uses a number of open source projects to work properly:
+KYI uses several open-source projects to work properly:
 - #### Android
     - Java
     - XML
     - Retrofit - for REST API
-    - Google Maps Api
+    - Google Maps API
 
 - #### Backend
     - NodeJS
